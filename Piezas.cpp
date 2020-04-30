@@ -113,8 +113,8 @@ Piece Piezas::gameState()
 				if (wo > lo)
 				{
 					lo = wo;
-					wo = 0;
 				}
+				wo = 0;
 			}
 			else if (board[i][j] == O)
 			{
@@ -122,8 +122,8 @@ Piece Piezas::gameState()
 				if (wx > lx)
 				{
 					lx = wx;
-					wx = 0;
 				}
+				wx = 0;
 			}
 			else
 			{
@@ -151,8 +151,8 @@ Piece Piezas::gameState()
 				if (wo > lo)
 				{
 					lo = wo;
-					wo = 0;
 				}
+				wo = 0;
 			}
 			else
 			{
@@ -160,21 +160,21 @@ Piece Piezas::gameState()
 				if (wx > lx)
 				{
 					lx = wx;
-					wx = 0;
 				}
+				wx = 0;
 			}
 		}
 	}
 	if (wo > lo)
 	{
 		lo = wo;
-		wo = 0;
 	}
+	wo = 0;
 	if (wx > lx)
 	{
 		lx = wx;
-		wx = 0;
 	}
+	wx = 0;
 	if (lx == lo)
 	{
 		return Blank;
