@@ -224,15 +224,15 @@ TEST(PiezasTest, xWins)
 	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
 	game.dropPiece(0);
 	game.dropPiece(1);
 	game.dropPiece(0);
 	game.dropPiece(2);
-	game.dropPiece(3);
-	game.dropPiece(2);
-	game.dropPiece(2);
-	game.dropPiece(3);
 	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
 	game.dropPiece(3);
 	Piece test = game.gameState();
 	ASSERT_EQ(test,X);
@@ -240,18 +240,18 @@ TEST(PiezasTest, xWins)
 TEST(PiezasTest, oWins)
 {
 	Piezas game = Piezas();
-	game.dropPiece(1);
 	game.dropPiece(0);
 	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
 	game.dropPiece(0);
-	game.dropPiece(2);
-	game.dropPiece(3);
-	game.dropPiece(2);
-	game.dropPiece(2);
-	game.dropPiece(3);
 	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(1);
+	game.dropPiece(2);
 	game.dropPiece(3);
 	game.dropPiece(0);
+	game.dropPiece(3);
 	Piece test = game.gameState();
 	ASSERT_EQ(test,O);
 }
