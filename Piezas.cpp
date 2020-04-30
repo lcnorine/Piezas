@@ -1,6 +1,5 @@
 #include "Piezas.h"
 #include <vector>
-#include <iostream>
 /** CLASS Piezas
  * Class for representing a Piezas vertical board, which is roughly based
  * on the game "Connect Four" where pieces are placed in a column and 
@@ -130,10 +129,8 @@ Piece Piezas::gameState()
 				if (wo > lo)
 				{
 					lo = wo;
-					std::cout << 'O' << ' ' << lo << '\n';
 				}
 				wo = 0;
-				std::cout << 'X' << ' ' << wx << ' ' << lx << '\n';
 			}
 			else if (board[i][j] == O)
 			{
@@ -141,10 +138,8 @@ Piece Piezas::gameState()
 				if (wx > lx)
 				{
 					lx = wx;
-					std::cout << 'X' << ' ' << lx << '\n';
 				}
 				wx = 0;
-				std::cout << 'O' << ' ' << wo << ' ' << lo << '\n';
 			}
 			else
 			{
@@ -154,13 +149,11 @@ Piece Piezas::gameState()
 		if (wo > lo)
 		{
 			lo = wo;
-			std::cout << 'O' << ' ' << lo << '\n';
 		}
 		wo = 0;
 		if (wx > lx)
 		{
 			lx = wx;
-			std::cout << 'X' << ' ' << lx << '\n';
 		}
 		wx = 0;
 	}
@@ -174,10 +167,8 @@ Piece Piezas::gameState()
 				if (wo > lo)
 				{
 					lo = wo;
-					std::cout << 'O' << ' ' << lo << '\n';
 				}
 				wo = 0;
-				std::cout << 'X' << ' ' << wx << ' ' << lx << '\n';
 			}
 			else
 			{
@@ -185,26 +176,21 @@ Piece Piezas::gameState()
 				if (wx > lx)
 				{
 					lx = wx;
-					std::cout << 'X' << ' ' << lx << '\n';
 				}
 				wx = 0;
-				std::cout << 'O' << ' ' << wo << ' ' << lo << '\n';
 			}
 		}
 		if (wo > lo)
 		{
 			lo = wo;
-			std::cout << 'O' << ' ' << lo << '\n';
 		}
 		wo = 0;
 		if (wx > lx)
 		{
 			lx = wx;
-			std::cout << 'X' << ' ' << lx << '\n';
 		}
 		wx = 0;
 	}
-	std::cout << lx << ' ' << lo << '\n';
 	if (lx == lo)
 	{
 		return Blank;
