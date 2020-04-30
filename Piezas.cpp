@@ -22,6 +22,8 @@
 **/
 Piezas::Piezas()
 {
+	board = {{Blank,Blank,Blank,Blank},{Blank,Blank,Blank,Blank},{Blank,Blank,Blank,Blank}};
+	turn = X;
 }
 
 /**
@@ -30,6 +32,13 @@ Piezas::Piezas()
 **/
 void Piezas::reset()
 {
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			board[i][j] = Blank;
+		}
+	}
 }
 
 /**
@@ -42,7 +51,28 @@ void Piezas::reset()
 **/ 
 Piece Piezas::dropPiece(int column)
 {
-    return Blank;
+	if (column >= 0 && column <= 3)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			if (board[i][column] == Blank)
+			{
+				board[i][column] = turn;
+				if (turn == X)
+				{
+					turn = O;
+					return X;
+				}
+				else
+				{
+					turn = X;
+					return O;
+				}
+			}
+		}
+		return Blank;
+	}
+	return Invalid;
 }
 
 /**
@@ -51,7 +81,11 @@ Piece Piezas::dropPiece(int column)
 **/
 Piece Piezas::pieceAt(int row, int column)
 {
-    return Blank;
+	if (row >= 0 && row <= 2 && column >= 0 && column <= 3)
+	{
+		return board[row][column];
+	}
+	return Invalid;
 }
 
 /**
@@ -65,5 +99,89 @@ Piece Piezas::pieceAt(int row, int column)
 **/
 Piece Piezas::gameState()
 {
-    return Blank;
+	int wx = 0;
+	int wo = 0;
+	int lx = 0;
+	int lo = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 1; j < 4; j++)
+		{
+			if (board[i][j] == X)
+			{
+				wx++;
+				if (wo > lo)
+				{
+					lo = wo;
+					wo = 0;
+				}
+			}
+			else if (board[i][j] == O)
+			{
+				wo++;
+				if (wx > lx)
+				{
+					lx = wx;
+					wx = 0;
+				}
+			}
+			else (board[i][j] == Blank)
+			{
+				return Invalid;
+			}
+		}
+	}
+	if (wo > lo)
+	{
+		lo = wo;
+		wo = 0;
+	}
+	if (wx > lx)
+	{
+		lx = wx;
+		wx = 0;
+	}
+	for (int j = 0; j < 4; j++)
+	{
+		for (int i = 1; i < i; i++)
+		{
+			if (board[i][j] == X)
+			{
+				wx++;
+				if (wo > lo)
+				{
+					lo = wo;
+					wo = 0;
+				}
+			}
+			else
+			{
+				wo++;
+				if (wx > lx)
+				{
+					lx = wx;
+					wx = 0;
+				}
+			}
+		}
+	}
+	if (wo > lo)
+	{
+		lo = wo;
+		wo = 0;
+	}
+	if (wx > lx)
+	{
+		lx = wx;
+		wx = 0;
+	}
+	if (lx == lo)
+	{
+		return Blank;
+	}
+	else if (lx > lo)
+	{
+		return X;
+	}
+	return O;
 }
