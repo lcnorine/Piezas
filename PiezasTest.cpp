@@ -21,7 +21,7 @@ TEST(PiezasTest, sanityCheck)
 
 TEST(PiezasTest, clearFilled)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(1);
 	game.dropPiece(0);
 	game.dropPiece(1);
@@ -59,7 +59,7 @@ TEST(PiezasTest, clearFilled)
 }
 TEST(PiezasTest, clearEmpty)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.reset();
 	Piece s00 = game.pieceAt(0,0);
 	Piece s01 = game.pieceAt(0,1);
@@ -89,52 +89,52 @@ TEST(PiezasTest, clearEmpty)
 
 TEST(PiezasTest, dropFirstPlace)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.dropPiece(0);
 	ASSERT_EQ(test,X);
 }
 TEST(PiezasTest, dropLastPlace)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.dropPiece(3);
 	ASSERT_EQ(test,X);
 }
 TEST(PiezasTest, dropTooSmall)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.dropPiece(-1);
 	ASSERT_EQ(test,Invalid);
 }
 TEST(PiezasTest, dropTooBig)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.dropPiece(4);
 	ASSERT_EQ(test,Invalid);
 }
 TEST(PiezasTest, dropFirstAndLastPlace)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	Piece test = game.dropPiece(3);
 	ASSERT_EQ(test,O);
 }
 TEST(PiezasTest, dropFirstAndTooBigPlace)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	Piece test = game.dropPiece(4);
 	ASSERT_EQ(test,Invalid);
 }
 TEST(PiezasTest, dropDouble)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	Piece test = game.dropPiece(0);
 	ASSERT_EQ(test,O);
 }
 TEST(PiezasTest, dropTriple)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(0);
 	Piece test = game.dropPiece(0);
@@ -142,7 +142,7 @@ TEST(PiezasTest, dropTriple)
 }
 TEST(PiezasTest, dropQuadruple)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(0);
 	game.dropPiece(0);
@@ -152,58 +152,58 @@ TEST(PiezasTest, dropQuadruple)
 
 TEST(PiezasTest, checkFirstPlace)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.pieceAt(0,0);
 	ASSERT_EQ(test,Blank);
 }
 TEST(PiezasTest, checkLastPlace)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.pieceAt(2,3);
 	ASSERT_EQ(test,Blank);
 }
 TEST(PiezasTest, checkTooLow)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.pieceAt(-1,0);
 	ASSERT_EQ(test,Invalid);
 }
 TEST(PiezasTest, checkTooHigh)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.pieceAt(3,3);
 	ASSERT_EQ(test,Invalid);
 }
 TEST(PiezasTest, checkTooLeft)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.pieceAt(0,-1);
 	ASSERT_EQ(test,Invalid);
 }
 TEST(PiezasTest, checkTooRight)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	Piece test = game.pieceAt(2,4);
 	ASSERT_EQ(test,Invalid);
 }
 
 TEST(PiezasTest, dropFirstPlaceAndCheck)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	Piece test = game.pieceAt(0,0);
 	ASSERT_EQ(test,X);
 }
 TEST(PiezasTest, dropLastPlaceAndCheck)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(3);
 	Piece test = game.pieceAt(0,3);
 	ASSERT_EQ(test,X);
 }
 TEST(PiezasTest, dropFirstAndLastPlaceAndCheck)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(3);
 	Piece test = game.pieceAt(0,3);
@@ -211,7 +211,7 @@ TEST(PiezasTest, dropFirstAndLastPlaceAndCheck)
 }
 TEST(PiezasTest, dropFirstAndTooBigPlaceAndCheck)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(4);
 	Piece test = game.pieceAt(0,3);
@@ -221,7 +221,7 @@ TEST(PiezasTest, dropFirstAndTooBigPlaceAndCheck)
 
 TEST(PiezasTest, xWins)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(1);
 	game.dropPiece(0);
@@ -239,7 +239,7 @@ TEST(PiezasTest, xWins)
 }
 TEST(PiezasTest, oWins)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(1);
 	game.dropPiece(0);
 	game.dropPiece(1);
@@ -257,7 +257,7 @@ TEST(PiezasTest, oWins)
 }
 TEST(PiezasTest, invalidWins)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(1);
 	game.dropPiece(0);
 	game.dropPiece(1);
@@ -274,7 +274,7 @@ TEST(PiezasTest, invalidWins)
 }
 TEST(PiezasTest, tiedWins)
 {
-	game = Piezas();
+	Piezas game = Piezas();
 	game.dropPiece(0);
 	game.dropPiece(1);
 	game.dropPiece(0);
