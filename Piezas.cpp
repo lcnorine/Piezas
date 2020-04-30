@@ -134,13 +134,13 @@ Piece Piezas::gameState()
 	if (wo > lo)
 	{
 		lo = wo;
-		wo = 0;
 	}
+	wo = 0;
 	if (wx > lx)
 	{
 		lx = wx;
-		wx = 0;
 	}
+	wx = 0;
 	for (int j = 0; j < 4; j++)
 	{
 		for (int i = 1; i < i; i++)
