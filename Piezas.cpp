@@ -125,7 +125,7 @@ Piece Piezas::gameState()
 					wx = 0;
 				}
 			}
-			else (board[i][j] == Blank)
+			else
 			{
 				return Invalid;
 			}
