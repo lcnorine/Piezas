@@ -248,8 +248,8 @@ TEST(PiezasTest, oWins)
 	game.dropPiece(1);
 	game.dropPiece(2);
 	game.dropPiece(1);
-	game.dropPiece(2);
 	game.dropPiece(3);
+	game.dropPiece(2);
 	game.dropPiece(0);
 	game.dropPiece(3);
 	Piece test = game.gameState();
