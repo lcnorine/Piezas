@@ -48,7 +48,7 @@ TEST(PiezasTest, clearFilled)
 	ASSERT_EQ(s01,Blank);
 	ASSERT_EQ(s02,Blank);
 	ASSERT_EQ(s03,Blank);
-	ASSERT_EQ(s00,Blank);
+	ASSERT_EQ(s10,Blank);
 	ASSERT_EQ(s11,Blank);
 	ASSERT_EQ(s12,Blank);
 	ASSERT_EQ(s13,Blank);
@@ -77,7 +77,7 @@ TEST(PiezasTest, clearEmpty)
 	ASSERT_EQ(s01,Blank);
 	ASSERT_EQ(s02,Blank);
 	ASSERT_EQ(s03,Blank);
-	ASSERT_EQ(s00,Blank);
+	ASSERT_EQ(s10,Blank);
 	ASSERT_EQ(s11,Blank);
 	ASSERT_EQ(s12,Blank);
 	ASSERT_EQ(s13,Blank);
