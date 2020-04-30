@@ -156,7 +156,7 @@ Piece Piezas::gameState()
 					lo = wo;
 				}
 				wo = 0;
-				std::cout << 'found ' << wx << ' Xs and new lx is ' << lx << '\n';
+				std::cout << 'X' << ' ' << wx << ' ' << lx << '\n';
 			}
 			else
 			{
@@ -166,7 +166,7 @@ Piece Piezas::gameState()
 					lx = wx;
 				}
 				wx = 0;
-				std::cout << 'found ' << wo << ' Os and new lo is ' << lo << '\n';
+				std::cout << 'O' << ' ' << wo << ' ' << lo << '\n';
 			}
 		}
 		if (wo > lo)
