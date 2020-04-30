@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lcnorine/Piezas.svg?branch=master)](https://travis-ci.org/lcnorine/Piezas)
+[![Coverage Status](https://coveralls.io/repos/github/lcnorine/Piezas/badge.svg?branch=master)](https://coveralls.io/github/lcnorine/Piezas?branch=master)
 # Piezas
 
 ## Associated Enumerated Types
