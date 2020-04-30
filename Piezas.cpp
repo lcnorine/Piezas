@@ -71,7 +71,23 @@ Piece Piezas::dropPiece(int column)
 				}
 			}
 		}
+		if (turn == X)
+		{
+			turn = O;
+		}
+		else
+		{
+			turn = X;
+		}
 		return Blank;
+	}
+	if (turn == X)
+	{
+		turn = O;
+	}
+	else
+	{
+		turn = X;
 	}
 	return Invalid;
 }
