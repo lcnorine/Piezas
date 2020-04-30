@@ -114,9 +114,10 @@ Piece Piezas::gameState()
 				if (wo > lo)
 				{
 					lo = wo;
+					std::cout << 'O' << ' ' << lo << '\n';
 				}
 				wo = 0;
-				std::cout << 'found ' << wx << ' Xs and new lx is ' << lx << '\n';
+				std::cout << 'X' << ' ' << wx << ' ' << lx << '\n';
 			}
 			else if (board[i][j] == O)
 			{
@@ -124,9 +125,10 @@ Piece Piezas::gameState()
 				if (wx > lx)
 				{
 					lx = wx;
+					std::cout << 'X' << ' ' << lx << '\n';
 				}
 				wx = 0;
-				std::cout << 'found ' << wo << ' Os and new lo is ' << lo << '\n';
+				std::cout << 'O' << ' ' << wo << ' ' << lo << '\n';
 			}
 			else
 			{
@@ -136,11 +138,13 @@ Piece Piezas::gameState()
 		if (wo > lo)
 		{
 			lo = wo;
+			std::cout << 'O' << ' ' << lo << '\n';
 		}
 		wo = 0;
 		if (wx > lx)
 		{
 			lx = wx;
+			std::cout << 'X' << ' ' << lx << '\n';
 		}
 		wx = 0;
 	}
@@ -154,6 +158,7 @@ Piece Piezas::gameState()
 				if (wo > lo)
 				{
 					lo = wo;
+					std::cout << 'O' << ' ' << lo << '\n';
 				}
 				wo = 0;
 				std::cout << 'X' << ' ' << wx << ' ' << lx << '\n';
@@ -164,6 +169,7 @@ Piece Piezas::gameState()
 				if (wx > lx)
 				{
 					lx = wx;
+					std::cout << 'X' << ' ' << lx << '\n';
 				}
 				wx = 0;
 				std::cout << 'O' << ' ' << wo << ' ' << lo << '\n';
@@ -172,11 +178,13 @@ Piece Piezas::gameState()
 		if (wo > lo)
 		{
 			lo = wo;
+			std::cout << 'O' << ' ' << lo << '\n';
 		}
 		wo = 0;
 		if (wx > lx)
 		{
 			lx = wx;
+			std::cout << 'X' << ' ' << lx << '\n';
 		}
 		wx = 0;
 	}
