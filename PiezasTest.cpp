@@ -219,7 +219,7 @@ TEST(PiezasTest, dropFirstAndTooBigPlaceAndCheck)
 }
 
 
-TEST(PiezasTest, xWins)
+TEST(PiezasTest, xWinsVertically)
 {
 	Piezas game = Piezas();
 	game.dropPiece(0);
@@ -237,7 +237,7 @@ TEST(PiezasTest, xWins)
 	Piece test = game.gameState();
 	ASSERT_EQ(test,X);
 }
-TEST(PiezasTest, oWins)
+TEST(PiezasTest, oWinsVertically)
 {
 	Piezas game = Piezas();
 	game.dropPiece(0);
@@ -250,7 +250,43 @@ TEST(PiezasTest, oWins)
 	game.dropPiece(1);
 	game.dropPiece(3);
 	game.dropPiece(2);
+	game.dropPiece(3);
 	game.dropPiece(0);
+	Piece test = game.gameState();
+	ASSERT_EQ(test,O);
+}
+TEST(PiezasTest, xWinsHorizontally)
+{
+	Piezas game = Piezas();
+	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	game.dropPiece(0);
+	game.dropPiece(3);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	Piece test = game.gameState();
+	ASSERT_EQ(test,X);
+}
+TEST(PiezasTest, oWinsHorizontally)
+{
+	Piezas game = Piezas();
+	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(2);
+	game.dropPiece(1);
+	game.dropPiece(3);
+	game.dropPiece(1);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(2);
+	game.dropPiece(0);
+	game.dropPiece(3);
 	game.dropPiece(3);
 	Piece test = game.gameState();
 	ASSERT_EQ(test,O);
@@ -272,7 +308,7 @@ TEST(PiezasTest, invalidWins)
 	Piece test = game.gameState();
 	ASSERT_EQ(test,Invalid);
 }
-TEST(PiezasTest, tiedWins)
+TEST(PiezasTest, tiedParallelVertical)
 {
 	Piezas game = Piezas();
 	game.dropPiece(0);
@@ -289,4 +325,80 @@ TEST(PiezasTest, tiedWins)
 	game.dropPiece(3);
 	Piece test = game.gameState();
 	ASSERT_EQ(test,Blank);
+}
+TEST(PiezasTest, tiedParallelHorizontal)
+{
+	Piezas game = Piezas();
+	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	game.dropPiece(3);
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	Piece test = game.gameState();
+	ASSERT_EQ(test,Blank);
+}
+TEST(PiezasTest, tiedPerpendicular)
+{
+	Piezas game = Piezas();
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(0);
+	game.dropPiece(2);
+	game.dropPiece(0);
+	game.dropPiece(3);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	Piece test = game.gameState();
+	ASSERT_EQ(test,Blank);
+}
+TEST(PiezasTest, xWinsBecauseOOutOfBounds)
+{
+	Piezas game = Piezas();
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(0);
+	game.dropPiece(2);
+	game.dropPiece(0);
+	game.dropPiece(3);
+	game.dropPiece(1);
+	game.dropPiece(4);
+	game.dropPiece(2);
+	game.dropPiece(5);
+	game.dropPiece(3);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	Piece test = game.gameState();
+	ASSERT_EQ(test,X);
+}
+TEST(PiezasTest, oWinsBecauseXOverflow)
+{
+	Piezas game = Piezas();
+	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(0);
+	game.dropPiece(1);
+	game.dropPiece(2);
+	game.dropPiece(2);
+	game.dropPiece(2);
+	game.dropPiece(3);
+	game.dropPiece(3);
+	game.dropPiece(3);
+	Piece test = game.gameState();
+	ASSERT_EQ(test,O);
 }
